@@ -2,7 +2,7 @@
 
 Modern, responsive single-page developer portfolio showcasing full-stack projects, technical skillset, and leadership experience.
 
-**Live site:** https://YOUR-SITE-URL/
+**Live site:** https://harshita-gururaj-onkar-portfolio.vercel.app/
 
 Built during the placement training program at [TAP Academy](https://thetapacademy.com/) (full-stack development, AI and augmented reality training).
 
