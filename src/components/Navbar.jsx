@@ -9,27 +9,27 @@ export default function Navbar() {
   const hireMeMailto = `mailto:${personalInfo.emails.primary}?subject=Hiring Inquiry – Portfolio&body=Hello ${personalInfo.name},%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 bg-[#000000] border-b border-white/10 shadow-md">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
+    <header className="sticky top-0 left-0 w-full z-50 py-3 sm:py-4 px-4 sm:px-6 pointer-events-none">
+      <nav className="pointer-events-auto max-w-4xl lg:max-w-5xl mx-auto bg-[#000000] border border-white/15 rounded-full shadow-2xl px-5 sm:px-8 h-14 sm:h-16 flex items-center justify-between transition-all duration-300">
         {/* Brand Logo */}
         <a
           href="#"
-          className="text-white text-2xl font-black tracking-tight hover:opacity-90 transition-opacity"
+          className="text-white text-lg sm:text-xl font-black tracking-tight hover:opacity-90 transition-opacity"
         >
           {personalInfo.brandName}
           <span className="text-[#ff2a2a]">.</span>
         </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navLinks.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="group relative text-white/80 hover:text-white font-medium text-sm lg:text-base transition-colors py-1"
+              className="group relative text-white/80 hover:text-white font-medium text-xs sm:text-sm tracking-wide transition-colors py-1"
             >
               {link}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </div>
@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href={hireMeMailto}
-            className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-sm hover:bg-neutral-200 transition-all duration-200 shadow-sm"
+            className="px-5 py-2 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 transition-all duration-200 shadow-sm"
           >
             Hire Me
           </a>
@@ -48,11 +48,11 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none p-2"
+          className="md:hidden text-white focus:outline-none p-1.5"
           aria-label="Toggle navigation menu"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -74,23 +74,23 @@ export default function Navbar() {
             )}
           </svg>
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Dropdown Panel */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-[#000000] border-b border-white/15 shadow-2xl overflow-hidden transition-all duration-300 ${
+        className={`md:hidden pointer-events-auto max-w-4xl mx-auto mt-2 bg-[#000000] border border-white/15 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
           isOpen
-            ? 'max-h-96 opacity-100 pointer-events-auto'
-            : 'max-h-0 opacity-0 pointer-events-none'
+            ? 'max-h-96 opacity-100'
+            : 'max-h-0 opacity-0 pointer-events-none border-transparent'
         }`}
       >
-        <div className="px-6 py-6 flex flex-col space-y-4">
+        <div className="px-6 py-5 flex flex-col space-y-3">
           {navLinks.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
-              className="text-white font-semibold text-lg border-b border-white/10 pb-2 hover:text-white/70 transition-colors"
+              className="text-white font-semibold text-base border-b border-white/10 pb-2 hover:text-white/70 transition-colors"
             >
               {link}
             </a>
@@ -98,12 +98,12 @@ export default function Navbar() {
           <a
             href={hireMeMailto}
             onClick={() => setIsOpen(false)}
-            className="w-full block text-center py-3 bg-white text-black font-bold rounded-full shadow hover:bg-neutral-200 transition-colors mt-2"
+            className="w-full block text-center py-2.5 bg-white text-black font-bold text-sm rounded-full shadow hover:bg-neutral-200 transition-colors mt-2"
           >
             Hire Me
           </a>
         </div>
       </div>
-    </nav>
+    </header>
   )
 }
