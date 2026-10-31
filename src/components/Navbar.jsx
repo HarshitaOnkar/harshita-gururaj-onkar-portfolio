@@ -1,48 +1,35 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { personalInfo } from '../data/portfolioData'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
 
   const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
   const hireMeMailto = `mailto:${personalInfo.emails.primary}?subject=Hiring Inquiry – Portfolio&body=Hello ${personalInfo.name},%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isOpen
-          ? 'bg-[#ff2a2a] py-4'
-          : `bg-transparent ${isScrolled ? 'py-4' : 'py-6'}`
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+    <nav className="sticky top-0 left-0 w-full z-50 bg-[#000000] border-b border-white/10 shadow-md">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
         {/* Brand Logo */}
-        <a href="#" className="text-white text-2xl font-black tracking-tight">
+        <a
+          href="#"
+          className="text-white text-2xl font-black tracking-tight hover:opacity-90 transition-opacity"
+        >
           {personalInfo.brandName}
           <span className="text-[#ff2a2a]">.</span>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="group relative text-white/80 hover:text-white font-medium transition-colors"
+              className="group relative text-white/80 hover:text-white font-medium text-sm lg:text-base transition-colors py-1"
             >
               {link}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </div>
@@ -51,7 +38,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href={hireMeMailto}
-            className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-white/20 transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]"
+            className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-sm hover:bg-neutral-200 transition-all duration-200 shadow-sm"
           >
             Hire Me
           </a>
@@ -91,7 +78,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Panel */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-[#ff2a2a] shadow-2xl overflow-hidden transition-all duration-300 ${
+        className={`md:hidden absolute top-full left-0 w-full bg-[#000000] border-b border-white/15 shadow-2xl overflow-hidden transition-all duration-300 ${
           isOpen
             ? 'max-h-96 opacity-100 pointer-events-auto'
             : 'max-h-0 opacity-0 pointer-events-none'
@@ -103,7 +90,7 @@ export default function Navbar() {
               key={link}
               href={`#${link.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
-              className="text-white font-bold text-lg border-b border-white/20 pb-2 hover:text-black transition-colors"
+              className="text-white font-semibold text-lg border-b border-white/10 pb-2 hover:text-white/70 transition-colors"
             >
               {link}
             </a>
@@ -111,7 +98,7 @@ export default function Navbar() {
           <a
             href={hireMeMailto}
             onClick={() => setIsOpen(false)}
-            className="w-full block text-center py-3 bg-white text-[#ff2a2a] font-bold rounded-full shadow hover:bg-white/90 transition-colors"
+            className="w-full block text-center py-3 bg-white text-black font-bold rounded-full shadow hover:bg-neutral-200 transition-colors mt-2"
           >
             Hire Me
           </a>
