@@ -1,7 +1,9 @@
+import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import TechnicalSkills from './components/TechnicalSkills'
+import Services from './components/Services'
 import Projects from './components/Projects'
 import Internships from './components/Internships'
 import Leadership from './components/Leadership'
@@ -15,10 +17,12 @@ function App() {
 
   return (
     <>
+      <Preloader />
       <Navbar />
       <Hero />
       <About />
       <TechnicalSkills />
+      <Services />
       <Projects />
       {hasInternships && <Internships />}
       {hasLeadership && <Leadership />}
