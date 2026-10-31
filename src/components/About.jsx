@@ -59,7 +59,7 @@ export default function About() {
                   <div className="w-12 h-1.5 bg-black/60 rounded-full mb-3" />
                   <img
                     src={stackImage}
-                    alt={personalInfo.name}
+                    alt="Harshita Gururaj Onkar — Python Full Stack Developer, TAP Academy student"
                     className="w-full h-full aspect-[3/4] rounded-xl object-cover object-top shadow-inner"
                   />
                 </div>
