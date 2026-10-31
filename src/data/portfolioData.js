@@ -27,7 +27,7 @@ export const academy = {
 export const socialLinks = {
   github: "https://github.com/HarshitaOnkar",
   linkedin: "https://www.linkedin.com/in/harshita-onkar-fullstackdeveloper/",
-  instagram: "",
+  instagram: "https://www.instagram.com/harshita_onkar?vrfl=d3doanpna2hpb2Fw",
 };
 
 export const heroContent = {

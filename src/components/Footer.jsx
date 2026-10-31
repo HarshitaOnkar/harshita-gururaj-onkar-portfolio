@@ -121,7 +121,7 @@ export default function Footer() {
 
             {/* Instagram */}
             <a
-              href={socialLinks.instagram || 'https://instagram.com'}
+              href={socialLinks.instagram || 'https://www.instagram.com/harshita_onkar?vrfl=d3doanpna2hpb2Fw'}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram Profile"

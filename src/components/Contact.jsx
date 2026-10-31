@@ -99,7 +99,7 @@ export default function Contact() {
               Reach Me
             </span>
             <a
-              href={socialLinks.instagram || 'https://instagram.com'}
+              href={socialLinks.instagram || 'https://www.instagram.com/harshita_onkar?vrfl=d3doanpna2hpb2Fw'}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold backdrop-blur-md transition-all"
