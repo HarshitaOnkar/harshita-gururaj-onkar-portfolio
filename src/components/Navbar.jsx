@@ -26,14 +26,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isOpen
-          ? 'bg-[#ff2a2a] py-4'
+          ? 'bg-[#ff2a2a] py-3.5'
           : isScrolled
-            ? 'bg-transparent py-4 backdrop-blur-md'
-            : 'bg-transparent py-6'
+            ? 'bg-transparent py-3 md:py-3.5 backdrop-blur-md'
+            : 'bg-transparent py-4 md:py-5'
       }`}
     >
-      {/* Inner wrapper */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      {/* Inner wrapper with slightly reduced length */}
+      <div className="max-w-6xl mx-auto px-6 md:px-8 flex justify-between items-center">
         {/* Left: Brand Logo */}
         <a href="#" className="text-white text-2xl font-black tracking-tight">
           {personalInfo.brandName}
